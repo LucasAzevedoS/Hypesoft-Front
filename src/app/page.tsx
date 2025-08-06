@@ -2,7 +2,6 @@ import Link from 'next/link';
 import ProductList from '../Components/products/ProductList';
 
 export default async function Home() {
-  // ProductList será cliente — pode buscar usando client-side hook
   return (
     <>
       <div className="flex justify-between items-center mb-6">

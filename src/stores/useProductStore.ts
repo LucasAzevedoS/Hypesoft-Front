@@ -19,9 +19,9 @@ export const useProductStore = create<State>((set) => ({
         set({ products, loading: false });
     },
 
-    create: async (p: Product) => {
-        set({ loading: true });
-        await productService.create(p);
-        await set((state) => ({ loading: false }));
-    }
+    // create: async (p: Product) => {
+    //     set({ loading: true });
+    //     await productService.create(p);
+    //     await set((state) => ({ loading: false }));
+    // }
 }));
