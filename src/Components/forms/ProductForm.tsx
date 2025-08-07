@@ -25,6 +25,8 @@ export default function ProductForm() {
             <input value={form.description} onChange={e => setForm({ ...form, description: e.target.value })} placeholder="Descrição" />
             <input type="number" value={form.price} onChange={e => setForm({ ...form, price: +e.target.value })} placeholder="Preço" />
             <input type="number" value={form.stockQuantity} onChange={e => setForm({ ...form, stockQuantity: +e.target.value })} placeholder="Quantidade" />
+            <label htmlFor="">category</label>
+            <input type="number" value={form.categoryId} onChange={e => setForm({ ...form, categoryId: e.target.value })} placeholder="Categoria ID" />
             <button type="submit" className="btn">Criar</button>
         </form>
     );

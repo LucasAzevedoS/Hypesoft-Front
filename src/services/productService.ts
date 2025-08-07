@@ -13,7 +13,7 @@ export const productService = {
     },
 
     create: async (payload: Product): Promise<string> => {
-        const { data } = await api.post<string>("/products", payload);
+        const { data } = await api.post<string>("/Products/Create", payload);
         return data;
     },
 
