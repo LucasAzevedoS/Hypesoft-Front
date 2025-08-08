@@ -1,16 +1,15 @@
 import Link from 'next/link';
 import ProductList from '../Components/products/ProductList';
+import LoginForm from '@/Components/forms/LoginForm';
+
 
 export default async function Home() {
   return (
     <>
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">Hypesoft Store</h1>
-        <Link href="/products/create" className="btn">Criar produto</Link>
-      </div>
+
 
       <section>
-        <ProductList />
+        <LoginForm />
       </section>
     </>
   );

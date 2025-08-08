@@ -31,8 +31,8 @@ export const productService = {
     //     return data;
     // },
 
-    // getByCategory: async (categoryId: string): Promise<Product[]> => {
-    //     const { data } = await api.get<Product[]>(`/products/categoria/${categoryId}`);
-    //     return data;
-    // }
+    getByCategory: async (categoryId: string): Promise<Product[]> => {
+        const { data } = await api.get<Product[]>(`/Product/por-categoria/${categoryId}`);
+        return data;
+    }
 };
