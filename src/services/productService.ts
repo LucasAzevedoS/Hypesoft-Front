@@ -7,6 +7,11 @@ export const productService = {
         return data;
     },
 
+    getAllDt: async (): Promise<Product[]> => {
+        const { data } = await api.get<Product[]>("/Products/GetAllDt");
+        return data;
+    },
+
     getById: async (id: string): Promise<Product> => {
         const { data } = await api.get<Product>(`/Products/GetById/${id}`);
         return data;
@@ -14,6 +19,11 @@ export const productService = {
 
     create: async (payload: Product): Promise<string> => {
         const { data } = await api.post<string>("/Products/Create", payload);
+        return data;
+    },
+
+    getLowStock: async (): Promise<Product[]> => {
+        const { data } = await api.get<Product[]>("/Product/LowStock");
         return data;
     },
 

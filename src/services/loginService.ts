@@ -9,9 +9,9 @@ export const loginService = {
     // },
 
 
-    async login(credentials: LoginCredentials): Promise<LoginResponse> {
-        const { data } = await api.post<LoginResponse>("/auth/login", credentials);
-        return data;
+    login: async (payload: LoginCredentials): Promise<LoginCredentials> => {
+        const response = await api.post<LoginCredentials>("/Auth/login", payload);
+        return response.data;
     },
 
     isAuthenticated: async (): Promise<boolean> => {

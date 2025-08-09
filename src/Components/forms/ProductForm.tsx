@@ -18,8 +18,11 @@ export default function ProductForm() {
 
     const [categories, setCategories] = useState<Category[]>([]);
 
+
     useEffect(() => {
         categoryService.getAll().then(setCategories);
+        console.log('Componente montou');
+        console.log('Token no localStorage:', localStorage.getItem("token"));
     }, []);
 
     async function handleSubmit(e: React.FormEvent) {

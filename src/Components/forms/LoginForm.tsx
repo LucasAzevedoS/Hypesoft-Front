@@ -12,7 +12,8 @@ import { Button } from '../ui/button';
 export default function LoginPage() {
     const [form, setForm] = useState<LoginCredentials>({
         username: '',
-        password: ''
+        password: '',
+        access_token: ''
     });
 
     const router = useRouter();
@@ -29,7 +30,7 @@ export default function LoginPage() {
             console.log('Login realizado com sucesso:', result);
             alert('Login realizado com sucesso');
 
-            router.push('/products');
+            router.push('/dashboard');
         } catch (error: any) {
             if (error.response?.status === 400) {
                 alert('Usuário ou senha inválidos');
