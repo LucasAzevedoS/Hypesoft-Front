@@ -7,8 +7,13 @@ export const productService = {
         return data;
     },
 
+    getPaged: async (page: number, pageSize: number) => {
+        const res = await api.get(`/products/paged?page=${page}&pageSize=${pageSize}`);
+        return res.data;
+    },
+
     getAllDt: async (): Promise<Product[]> => {
-        const { data } = await api.get<Product[]>("/Products/GetAllDt");
+        const { data } = await api.get<Product[]>("/Products/GetLast");
         return data;
     },
 
@@ -27,12 +32,14 @@ export const productService = {
         return data;
     },
 
-    // updateStock: async (productId: string, newQuantity: number) => {
-    //     await api.patch("/products/estoque", {
-    //         productId,
-    //         newQuantity,
-    //     });
-    // },
+    remove: async (id: string): Promise<void> => {
+        await api.delete(`/Products/DeleteById/${id}`);
+    },
+
+    update: async (id: string, payload: Product): Promise<void> => {
+        await api.put(`/Products/EditById/${id}`, payload);
+    },
+
 
     // searchByName: async (name: string): Promise<Product[]> => {
     //     const { data } = await api.get<Product[]>("/products/search", {

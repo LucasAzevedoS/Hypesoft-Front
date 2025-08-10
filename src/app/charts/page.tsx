@@ -7,6 +7,7 @@ import ProductsByCategoryChart from "@/Components/charts/ProductsByCategoryChart
 import { Sidebar } from "@/Components/dashboard/sidebar";
 import ProductList from "@/Components/products/ProductList";
 import ProductListDt from "@/Components/products/ProductListDt";
+import DashboardCharts from "@/Components/charts/DashboardCharts";
 
 
 export default function DashboardPage() {
@@ -21,7 +22,7 @@ export default function DashboardPage() {
                     </div>
                     <main className="flex-1 p-6 bg-gray-50">
                         <MetricsCards />
-                        <ProductListDt />
+                        <DashboardCharts />
                     </main>
 
                 </div>

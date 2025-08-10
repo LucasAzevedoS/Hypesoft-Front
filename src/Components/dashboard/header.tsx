@@ -43,7 +43,6 @@ export function Header() {
                     </Button>
                     <div className="flex items-center gap-2">
                         <Avatar className="w-8 h-8">
-                            <AvatarImage src="/placeholder.svg?height=32&width=32" />
                             <AvatarFallback>{username?.[0] ?? "?"}</AvatarFallback>
                         </Avatar>
                         <div className="text-sm">
