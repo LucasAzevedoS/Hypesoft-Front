@@ -50,7 +50,7 @@ Siga os passos abaixo para executar o projeto em seu ambiente de desenvolvimento
 
 1.  **Clone o repositório:**
     ```bash
-    git clone <URL_DO_REPOSITORIO>
+    git clone https://github.com/LucasAzevedoS/Hypesoft-Front.git
     cd Hypesoft-front
     ```
 
