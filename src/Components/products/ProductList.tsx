@@ -11,7 +11,7 @@ export default function ProductList() {
     const { products, fetchPage, loading, page, totalPages, hasNextPage, hasPreviousPage } =
         useProductStorepaged();
 
-    // Usar o store principal para as operações de update e remove
+
     const { remove, update } = useProductStore();
 
     const [selectedProduct, setSelectedProduct] = useState<any>(null);
@@ -24,7 +24,7 @@ export default function ProductList() {
         if (confirm('Tem certeza que deseja excluir este produto?')) {
             try {
                 await remove(productId);
-                // Recarregar a página atual após excluir
+
                 fetchPage(page);
             } catch (error) {
                 alert('Erro ao excluir produto');
@@ -49,7 +49,7 @@ export default function ProductList() {
             );
 
             setSelectedProduct(null);
-            // Recarregar a página atual após atualizar
+
             fetchPage(page);
             alert('Produto atualizado com sucesso!');
         } catch (error) {
@@ -63,11 +63,11 @@ export default function ProductList() {
 
     return (
         <div className="space-y-6">
-            {/* Lista */}
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {products.map((p) => (
                     <div key={p.id} className="border rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow relative">
-                        {/* Botão de opções */}
+
                         <div className="absolute top-2 right-2">
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
@@ -104,7 +104,7 @@ export default function ProductList() {
                 ))}
             </div>
 
-            {/* Paginação */}
+
             <div className="flex justify-center space-x-2">
                 <Button
                     variant="outline"
@@ -125,7 +125,6 @@ export default function ProductList() {
                 </Button>
             </div>
 
-            {/* Modal de Edição */}
             <Dialog open={!!selectedProduct} onOpenChange={() => setSelectedProduct(null)}>
                 <DialogContent className="max-w-md mx-auto bg-white rounded-lg p-6">
                     <DialogHeader>
